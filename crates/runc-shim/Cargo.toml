@@ -36,6 +36,7 @@ serde.workspace = true
 serde_json.workspace = true
 time.workspace = true
 uuid.workspace = true
+prctl.workspace = true
 
 # Async dependencies
 async-trait.workspace = true
