@@ -55,7 +55,12 @@ pub mod cgroup;
 pub mod event;
 pub mod logger;
 pub mod monitor;
-pub mod mount;
+pub mod mount_linux;
+pub mod mount_other;
+#[cfg(target_os = "linux")]
+pub use mount_linux as mount;
+#[cfg(not(target_os = "linux"))]
+pub use mount_other as mount;
 mod reap;
 #[cfg(not(feature = "async"))]
 pub mod synchronous;
